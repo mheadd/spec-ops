@@ -32,4 +32,4 @@ footer a:hover { text-decoration:underline; }
 .header-blob.b1 { width:320px; height:320px; background:#60a5fa; top:-60px; left:-40px; border-radius:50%; }
 .header-blob.b2 { width:420px; height:420px; background:#a78bfa; top:-80px; right:-80px; border-radius:50%; }
 @media (prefers-reduced-motion: reduce) { .logo-gradient { animation:none; } .reveal { opacity:1 !important; transform:none !important; } }
-@media (max-width: 768px) { h1 { font-size:2rem; } .tagline { font-size:1.25rem; } .section-title { font-size:2rem; } }
+@media (max-width: 768px) { h1 { font-size:2rem; } .tagline { font-size:1.25rem; } .section-title { font-size:2rem; } .top-nav { position:static; margin-bottom:1.5rem; justify-content:center; flex-wrap:wrap; } header { padding-top:1.5rem; } header .container { display:flex; flex-direction:column; } }
