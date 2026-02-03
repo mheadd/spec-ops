@@ -148,6 +148,74 @@ Potential improvements to the asset pipeline:
 - **CSS splitting** — Separate critical CSS, inline above-the-fold styles
 - **PWA manifest** — Generate `manifest.json` with icon references for installability
 
+## Blog
+
+The website includes a blog section at `docs/blog/`. Posts are stored as individual HTML files in subdirectories.
+
+### Blog Structure
+
+```
+docs/blog/
+├── index.html              # Blog listing page (shows all posts)
+└── posts/
+    ├── welcome/
+    │   └── index.html      # Individual post
+    ├── my-next-post/
+    │   └── index.html
+    └── ...
+```
+
+### Creating a New Post
+
+1. **Create a subdirectory** under `docs/blog/posts/` with a URL-friendly slug:
+
+   ```bash
+   mkdir docs/blog/posts/my-new-post
+   ```
+
+2. **Copy an existing post** as a template:
+
+   ```bash
+   cp docs/blog/posts/welcome/index.html docs/blog/posts/my-new-post/index.html
+   ```
+
+3. **Edit the new post** — Update these key elements:
+
+   - `<title>` — Post title for browser tab
+   - `<meta name="description">` — Brief summary for SEO
+   - `<meta property="og:title">` and `<meta property="og:description">` — Social sharing
+   - `<meta property="article:published_time">` — Publication date (YYYY-MM-DD)
+   - `<h1>` in header — Post title displayed on page
+   - `<time datetime="...">` — Human-readable date
+   - `<article class="post-content">` — Your post content (supports h2, p, ul, ol, a, strong, em)
+
+4. **Add to the listing page** — Edit `docs/blog/index.html` and add a new card at the **top** of the `.blog-grid` div (newest posts first):
+
+   ```html
+   <a href="./posts/my-new-post/" class="blog-card">
+       <time datetime="2026-02-15">February 15, 2026</time>
+       <h2>My New Post Title</h2>
+       <p>A brief excerpt or summary of the post content.</p>
+       <span class="read-more">Read more →</span>
+   </a>
+   ```
+
+### Post Template Reference
+
+Each post uses this basic structure:
+
+- **Header** — Gradient background with post title and date
+- **Toolbar** — Navigation links back to blog listing and home
+- **Main content** — White card with article content
+- **Footer** — Standard site footer
+
+Posts support standard HTML elements within `.post-content`:
+- Headings: `<h2>`
+- Paragraphs: `<p>`
+- Lists: `<ul>`, `<ol>`, `<li>`
+- Links: `<a href="...">`
+- Emphasis: `<strong>`, `<em>`
+
 ## Related Documentation
 
 - [README.md](README.md) — Project overview and philosophy

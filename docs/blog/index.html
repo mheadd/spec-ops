@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpecOps Blog - Updates, insights, and stories about specification-driven legacy modernization">
+    <title>SpecOps Blog</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SpecOps Blog">
+    <meta property="og:description" content="Updates, insights, and stories about specification-driven legacy modernization.">
+    <meta property="og:image" content="../og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpecOps Blog">
+    <meta name="twitter:description" content="Updates, insights, and stories about specification-driven legacy modernization.">
+    <meta name="twitter:image" content="../og-image.png">
+    <link rel="stylesheet" href="../styles.min.css">
+    <style>
+        /* Blog listing styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+        header p { font-size: 1.125rem; opacity: 0.95; margin: 0; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .blog-card time {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 0 0 0.75rem;
+            font-weight: 600;
+        }
+
+        .blog-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .blog-card .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            header p { font-size: 1rem; }
+            .blog-card { padding: 1.5rem; }
+            .blog-card h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">⚡ SpecOps Blog</h1>
+            <p>Updates, insights, and stories about specification-driven legacy modernization</p>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../" class="btn-link">← Back to Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Posts listed newest first -->
+                
+                <a href="./posts/welcome/" class="blog-card">
+                    <time datetime="2026-02-03">February 3, 2026</time>
+                    <h2>Welcome to the SpecOps Blog</h2>
+                    <p>Introducing our blog where we'll share updates, insights, and stories about specification-driven legacy modernization.</p>
+                    <span class="read-more">Read more →</span>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
