@@ -192,12 +192,17 @@
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-weight: 500;
-            margin-bottom: 2rem;
             transition: color 0.2s ease;
         }
 
         .back-link:hover {
             color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         /* Responsive */
@@ -215,7 +220,11 @@
 <body>
     <section class="book-hero">
         <div class="container">
-            <a href="./" class="back-link">← Back to SpecOps</a>
+            <div class="nav-links">
+                <a href="./" class="back-link">← Home</a>
+                <a href="./blog/" class="back-link">Blog</a>
+                <a href="./faq.html" class="back-link">FAQ</a>
+            </div>
             <div class="book-container">
                 <div class="book-cover-wrapper">
                     <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer">
