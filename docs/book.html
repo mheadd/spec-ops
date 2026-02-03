@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpecOps: The Book - The comprehensive guide to specification-driven legacy system modernization">
+    <title>SpecOps: The Book</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SpecOps: The Book">
+    <meta property="og:description" content="The comprehensive guide to specification-driven legacy system modernization. Learn how to preserve institutional knowledge and leverage AI.">
+    <meta property="og:image" content="./og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpecOps: The Book">
+    <meta name="twitter:description" content="The comprehensive guide to specification-driven legacy system modernization. Learn how to preserve institutional knowledge and leverage AI.">
+    <meta name="twitter:image" content="./og-image.png">
+    <link rel="stylesheet" href="./styles.min.css">
+    <style>
+        /* Book Hero Section */
+        .book-hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .book-container {
+            display: grid;
+            grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book-cover-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-cover {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.02) translateY(-4px);
+        }
+
+        .book-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .book-content h1::before {
+            content: '📚 ';
+        }
+
+        .book-content p {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .book-cta {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-cta:hover {
+            background: #fbbf24;
+            color: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About the Book Section */
+        .about-book {
+            padding: 4rem 0;
+            background: var(--bg-alt);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .about-card ul {
+            margin: 0.75rem 0 0 1.25rem;
+            color: var(--text-light);
+        }
+
+        .about-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Sample Chapter Section */
+        .sample-chapter {
+            padding: 4rem 0;
+        }
+
+        .chapter-content {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .chapter-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .chapter-placeholder {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 0.75rem;
+            border: 2px dashed var(--primary);
+        }
+
+        .chapter-placeholder p {
+            color: var(--primary);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .book-container { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
+            .book-content h1 { font-size: 2rem; }
+            .book-content p { font-size: 1.125rem; }
+            .chapter-content { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="book-hero">
+        <div class="container">
+            <a href="./" class="back-link">← Back to SpecOps</a>
+            <div class="book-container">
+                <div class="book-cover-wrapper">
+                    <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer">
+                        <img src="./SpecOpsBookCover.jpeg" alt="SpecOps Book Cover" class="book-cover">
+                    </a>
+                </div>
+                <div class="book-content">
+                    <h1>Now Available!</h1>
+                    <p>
+                        The comprehensive guide to specification-driven legacy system modernization. 
+                        Learn how to preserve institutional knowledge, reduce risk, and leverage AI to 
+                        transform mission-critical systems.
+                    </p>
+                    <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer" class="book-cta">
+                        Buy on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-book">
+        <div class="container">
+            <h2 class="section-title">What You'll Learn</h2>
+            <p class="section-subtitle">
+                A practical guide for technical leaders modernizing legacy government systems
+            </p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>📋 The SpecOps Methodology</h3>
+                    <p>
+                        Understand the core principles of specification-driven modernization and why 
+                        preserving institutional knowledge is more important than just converting code.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>🤖 AI-Powered Extraction</h3>
+                    <p>
+                        Learn how to use AI tools to extract business logic and rules from legacy 
+                        systems, creating comprehensive specifications that capture decades of refinement.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>✅ Verification Strategies</h3>
+                    <p>
+                        Discover techniques for verifying that modernized systems behave identically 
+                        to their predecessors, ensuring nothing is lost in translation.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>🏛️ Government Case Studies</h3>
+                    <p>
+                        Explore real-world examples of legacy modernization in government contexts, 
+                        with lessons learned and best practices.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>🔧 Tools & Techniques</h3>
+                    <ul>
+                        <li>Setting up AI extraction pipelines</li>
+                        <li>Creating executable specifications</li>
+                        <li>Building verification test suites</li>
+                        <li>Managing modernization projects</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3>🚀 Future-Proofing</h3>
+                    <p>
+                        Learn how specification-first development protects your investment by making 
+                        future technology migrations straightforward.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sample-chapter">
+        <div class="container">
+            <h2 class="section-title">Sample Chapter</h2>
+            <p class="section-subtitle">
+                Get a preview of what's inside the book
+            </p>
+            
+            <div class="chapter-content">
+                <div class="chapter-placeholder">
+                    <p>📖 Sample chapter content coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
