@@ -160,7 +160,7 @@
         .chapter-content h3 {
             font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin: 2rem 0 1rem;
         }
 
         .chapter-content p {
@@ -168,6 +168,19 @@
             line-height: 1.8;
             color: var(--text);
             margin-bottom: 1.25rem;
+        }
+
+        .chapter-content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .cta-box {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
         }
 
         .chapter-placeholder {
@@ -310,8 +323,83 @@
             </p>
             
             <div class="chapter-content">
-                <div class="chapter-placeholder">
-                    <p>📖 Sample chapter content coming soon!</p>
+                <h3>Introduction</h3>
+                <p>
+                    Some of the most critical systems in government run on software that is older than most of the people trying to maintain them.
+                </p>
+
+                <p>
+                    The systems processing unemployment claims, tax returns, and benefits eligibility were often built decades ago, in programming languages that most universities no longer teach, by people who have retired, or those getting ready to. These systems work, after a fashion. They process millions of transactions. They deliver services that many citizens depend on. But they are fragile, poorly understood, largely undocumented, and increasingly dangerous to change.
+                </p>
+
+                <p>
+                    This is not a new problem. Government technology leaders and people working in civic tech have known about the problems presented by aging systems for years. What's new is the convergence of two forces that together create both heightened urgency and new opportunity.
+                </p>
+
+                <p>
+                    The urgency is a function of demographics. Some of the most critical systems operated by federal and state governments are built on technologies that stretch back to the 1950s. The average age of the people in government who have expertise in these antiquated technologies has now crossed the retirement threshold. The people who understand how government systems actually work are leaving at an accelerated rate, and in many cases their knowledge is leaving with them. The window for capturing institutional knowledge about how critical government systems work, and (critically) why they work the way they do, is closing.
+                </p>
+
+                <p>
+                    The opportunity is a result of recent advances in technology. AI coding assistants have reached a threshold of capability where they can analyze legacy code at scale, extract business logic, and generate documentation that humans can review and verify. This doesn't mean AI can magically fix legacy systems. It can't. But it does mean that tasks which were previously impossible, like comprehensively documenting vast legacy codebases, are now merely difficult.
+                </p>
+
+                <p>
+                    This book introduces a new approach to legacy system modernization called SpecOps that harnesses the opportunity presented by these new tools to address the growing urgency. The basic premise is simple: the valuable aspect of a software system isn't the code it is written in. It's the detailed knowledge of what the system does and why. Code is just one expression of that knowledge, written in a language that becomes obsolete over time. Specifications capture the same knowledge in a form that can be persisted.
+                </p>
+
+                <p>
+                    SpecOps treats specifications as the source of truth for system behavior. AI assists in extracting specifications from legacy code. Domain experts verify that those specifications correctly describe how systems work. Modern implementations can then be generated from verified specifications, often using AI-coding assistants and similar tools. The result is a modernization approach that preserves institutional knowledge rather than losing it, and that produces systems designed to evolve over time rather than become archaic.
+                </p>
+
+                <hr>
+
+                <h3>Book Overview</h3>
+
+                <p>The book is organized into six parts:</p>
+
+                <p>
+                    <strong>Part I: The Legacy Modernization Crisis</strong> establishes the problem — the scale of government legacy systems, the workforce dynamics that make modernization urgent, and why traditional approaches have consistently failed.
+                </p>
+
+                <p>
+                    <strong>Part II: The AI-Assisted Development Revolution</strong> introduces the enabling technology — AI coding assistants, specification-driven development, and the GitOps pattern of treating version-controlled declarations as the source of truth.
+                </p>
+
+                <p>
+                    <strong>Part III: Introducing SpecOps</strong> presents the methodology itself — distinguishing compilation from transpilation, walking through the six phases, and introducing the core principles and tools.
+                </p>
+
+                <p>
+                    <strong>Part IV: Why This Works for Government</strong> addresses the specific context — knowledge preservation, the politics of modernization, and collaboration opportunities across agencies.
+                </p>
+
+                <p>
+                    <strong>Part V: SpecOps in Practice</strong> provides practical guidance — getting started, working with AI tools and human collaborators, and tackling common challenges.
+                </p>
+
+                <p>
+                    <strong>Part VI: Looking Forward</strong> considers what success would mean — breaking the legacy cycle and building a community of practice.
+                </p>
+
+                <hr>
+
+                <p>
+                    This book is written for anyone responsible for or interested in legacy system modernization, but especially for those working in and around government. It assumes familiarity with the challenges of government technology but does not require deep technical expertise. The goal is to provide both a conceptual framework for thinking about legacy modernization in a new way and practical guidance for putting that framework into action.
+                </p>
+
+                <p>
+                    The legacy crisis in government technology has been building for many decades. Over that time, modernization projects have failed spectacularly and repeatedly. The same patterns have produced the same outcomes. This book argues that the emergence of AI coding assistants creates an opportunity to do something different: to preserve knowledge before it disappears, to verify understanding with the people who actually know how systems work, and why, and to build technology that can evolve rather than accumulating decades of complexity.
+                </p>
+
+                <p>
+                    The window to address the urgent problem we face is open. The tools to do things differently now exist. What remains to be seen is whether we as a community of technologists in and around government will rise to the challenge.
+                </p>
+
+                <div class="cta-box">
+                    <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer" class="book-cta">
+                        Get the Full Book on Amazon
+                    </a>
                 </div>
             </div>
         </div>
