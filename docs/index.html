@@ -306,75 +306,74 @@
             box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
         }
 
-        /* Book Section */
+        /* Book Teaser Section */
         .book-announcement {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
         }
 
-        .book-container {
-            display: grid;
-            grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
-            gap: 3rem;
+        .book-teaser {
+            display: flex;
             align-items: center;
-            max-width: 1200px;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .book-cover-wrapper {
-            display: flex;
-            justify-content: center;
+        .book-teaser-cover {
+            flex-shrink: 0;
         }
 
-        .book-cover {
-            max-width: 100%;
+        .book-teaser .book-cover {
+            width: 120px;
             height: auto;
-            border-radius: 0.75rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
 
-        .book-cover:hover {
-            transform: scale(1.02) translateY(-4px);
+        .book-teaser .book-cover:hover {
+            transform: scale(1.05);
         }
 
-        .book-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .book-teaser-content {
+            text-align: left;
+        }
+
+        .book-teaser-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
             color: white;
             font-weight: 700;
         }
 
-        .book-content h2::before {
-            content: '📚 ';
-        }
-
-        .book-content p {
-            font-size: 1.25rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.95);
+        .book-teaser-content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .book-cta {
             display: inline-block;
             background: white;
             color: #2563eb;
-            padding: 1rem 2.5rem;
-            font-size: 1.25rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
             font-weight: 700;
             border-radius: 0.5rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .book-cta:hover {
             background: #fbbf24;
             color: #1e3a8a;
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Responsive additions specific to page layout */
@@ -382,12 +381,11 @@
             .concept-box { padding: 2rem; }
             .doc-grid { grid-template-columns: 1fr; }
             .concept-cards { grid-template-columns: 1fr; }
-            .book-container { 
-                grid-template-columns: 1fr; 
-                gap: 2rem; 
+            .book-teaser { 
+                flex-direction: column; 
+                text-align: center; 
             }
-            .book-content h2 { font-size: 2rem; }
-            .book-content p { font-size: 1.125rem; }
+            .book-teaser-content { text-align: center; }
         }
     </style>
 </head>
@@ -396,6 +394,7 @@
         <div class="container">
             <nav class="top-nav" aria-label="Primary">
                 <a href="#tools">Tools</a>
+                <a href="./book.html">Book</a>
                 <a href="./faq.html">FAQ</a>
             </nav>
             <h1 class="logo-gradient">⚡ SpecOps</h1>
@@ -408,22 +407,14 @@
 
     <section class="book-announcement">
         <div class="container">
-            <div class="book-container">
-                <div class="book-cover-wrapper">
-                    <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer">
-                        <img src="./SpecOpsBookCover.jpeg" alt="SpecOps Book Cover" class="book-cover">
-                    </a>
-                </div>
-                <div class="book-content">
-                    <h2>Now Available!</h2>
-                    <p>
-                        The comprehensive guide to specification-driven legacy system modernization. 
-                        Learn how to preserve institutional knowledge, reduce risk, and leverage AI to 
-                        transform mission-critical systems.
-                    </p>
-                    <a href="https://www.amazon.com/dp/B0GFGTK6TG" target="_blank" rel="noopener noreferrer" class="book-cta">
-                        Buy on Amazon
-                    </a>
+            <div class="book-teaser">
+                <a href="./book.html" class="book-teaser-cover">
+                    <img src="./SpecOpsBookCover.jpeg" alt="SpecOps Book Cover" class="book-cover">
+                </a>
+                <div class="book-teaser-content">
+                    <h2>📚 The Book Is Here!</h2>
+                    <p>Get the comprehensive guide to specification-driven legacy modernization.</p>
+                    <a href="./book.html" class="book-cta">Learn More</a>
                 </div>
             </div>
         </div>
