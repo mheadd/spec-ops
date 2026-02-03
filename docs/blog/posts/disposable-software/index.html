@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How the rise of AI-generated 'disposable software' affects government technology strategy, and why SpecOps offers a path forward.">
+    <title>Disposable Software and the Future of Government Technology | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Disposable Software and the Future of Government Technology">
+    <meta property="og:description" content="How the rise of AI-generated 'disposable software' affects government technology strategy, and why SpecOps offers a path forward.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-01-17">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Disposable Software and the Future of Government Technology">
+    <meta name="twitter:description" content="How the rise of AI-generated 'disposable software' affects government technology strategy, and why SpecOps offers a path forward.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .book-callout {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-callout p {
+            margin: 0;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">Disposable Software and the Future of Government Technology</h1>
+            <time datetime="2026-01-17">January 17, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    A fundamental shift is underway affecting the way that software is developed and maintained. For those not watching the software industry closely over the last year or so, it may come as a bit of a shock.
+                </p>
+
+                <p>
+                    The rapid evolution of AI coding tools and increasingly sophisticated generative AI models has <a href="https://tuananh.net/2026/01/15/architecture-for-disposable-systems/">surfaced the idea of "disposable software."</a> According to this school of thought, when an AI coding agent can regenerate a functional component from a prompt in minutes, the traditional incentive to maintain and refactor software code over long periods of time diminishes. Why invest in cleaning up technical debt in old code when you can simply regenerate new code?
+                </p>
+
+                <p>
+                    The architecture proposed to accommodate this shift distinguishes between <strong>durable</strong> and <strong>disposable</strong> layers: a stable core containing critical business logic, immutable API contracts that define how components communicate, and a disposable layer of AI-generated code that can be regenerated as needed. The core and contracts must be solid because the disposable parts don't need to be.
+                </p>
+
+                <p>
+                    The idea of designing for obsolescence isn't entirely new. Software architects have long distinguished between stable foundations and components expected to change. But AI code generation has magnified the relevance of this thinking. When generating software code is cheap, maintenance becomes the expensive option.
+                </p>
+
+                <p>
+                    This shift matters for government, though not in ways the private sector typically considers.
+                </p>
+
+                <p>
+                    Government technology strategy has historically been reactive. The Agile Manifesto appeared in 2001, and agile practices became industry standard by the mid-2000s. Government didn't seriously engage with agile until after high-profile failures like Healthcare.gov in 2013, and many agencies are still struggling to reconcile iterative delivery with annual appropriations, waterfall procurement, and oversight structures that expect fixed requirements upfront. That's a lag of more than a decade, and the gap still hasn't fully closed.
+                </p>
+
+                <p>
+                    If AI-assisted development represents another paradigm shift in how software is developed, government faces the prospect of falling behind again before catching up from the last transition. Agencies just getting comfortable with agile and DevOps may find the industry has already moved on.
+                </p>
+
+                <p>
+                    Government also faces unique constraints that the "disposable software" concept doesn't account for. Software supporting government functions is funded by taxpayers, and characterizing any part of it as "throwaway" or "temporary" carries some political risk. Explaining to an appropriations committee that you're requesting funds for software you intend to discard could invite accusations of waste, even when the underlying economics make sense. Technical architectures don't exist in a vacuum. They have to survive contact with budget processes, oversight mechanisms, and public expectations about stewardship of public funds.
+                </p>
+
+                <p>
+                    This is where <a href="https://spec-ops.ai/">the SpecOps methodology</a> offers a path forward.
+                </p>
+
+                <p>
+                    SpecOps treats verified specifications, detailed descriptions of how systems work in human-readable format, as the source of truth for system behavior, with code as a regenerable implementation detail. This aligns with the durable-core-plus-disposable-periphery model of "disposable systems", but elevates the durable layer from code to human-readable specifications that domain experts can verify.
+                </p>
+
+                <p>
+                    The distinction is important. A specification written in natural language captures policy intent and institutional knowledge in a form that program managers and policy experts can review directly. They don't need to read software code or trust that technical experts understood policy requirements correctly. When the specification is authoritative, the valuable artifact is something non-technical stakeholders can engage with meaningfully.
+                </p>
+
+                <p>
+                    This framing also addresses the political dimension better. The specification represents the lasting investment in a system, preserving institutional knowledge and policy intent. Regenerating implementation code as technology evolves is analogous to reprinting a book in a new format. You're not discarding the investment; you're producing a new edition while the intellectual content persists. That's a defensible use of public funds in ways that "disposable code" is not.
+                </p>
+
+                <p>
+                    Perhaps most importantly, the SpecOps Method offers a hedge against an uncertain future. Technology will continue to change in ways we can't fully predict. The programming languages, frameworks, and platforms that seem current today will eventually become legacy technology themselves. A verified specification that captures what a system does, independent of how it's implemented, remains valuable across those transitions. When better AI tools emerge or new runtime environments become standard, agencies can regenerate new code from the specification rather than maintaining aging code.
+                </p>
+
+                <p>
+                    Government agencies managing systems that must operate for decades need this kind of durability. The specification becomes the stable foundation while specific technology implementations come and go. This is an architecture for disposable systems that can work for government.
+                </p>
+
+                <p>
+                    The shift toward disposable software is real and accelerating in the private sector. Government can either anticipate this change and adapt proactively, or wait for painful failures to force the issue. SpecOps provides a framework for the former: preserving what matters, enabling regeneration of what doesn't, and positioning agencies to benefit from AI-assisted development rather than being left behind by it.
+                </p>
+
+                <div class="book-callout">
+                    <p>
+                        The book, <em>The SpecOps Method: A New Approach to Modernizing Legacy Technology Systems</em>, is <a href="https://www.amazon.com/dp/B0GFGTK6TG">now available on Amazon</a>.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

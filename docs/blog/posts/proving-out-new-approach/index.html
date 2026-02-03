@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Testing the SpecOps methodology with the IRS Direct File project - extracting specifications from real government code using AI.">
+    <title>Proving Out a New Approach to Legacy System Modernization | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Proving Out a New Approach to Legacy System Modernization">
+    <meta property="og:description" content="Testing the SpecOps methodology with the IRS Direct File project - extracting specifications from real government code using AI.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-02-03">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Proving Out a New Approach to Legacy System Modernization">
+    <meta name="twitter:description" content="Testing the SpecOps methodology with the IRS Direct File project - extracting specifications from real government code using AI.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        .results-table th, .results-table td {
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        .results-table th {
+            background: var(--bg-alt);
+            font-weight: 600;
+        }
+
+        .get-involved {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .get-involved ul {
+            margin: 0.75rem 0 0 1.25rem;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">Proving Out a New Approach to Legacy System Modernization</h1>
+            <time datetime="2026-01-29">January 29, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    Government legacy systems hold decades of institutional knowledge — eligibility rules, policy interpretations, edge cases learned the hard way. When agencies modernize these systems, the typical approach is to translate old software code into new software code. But this approach misses something fundamental — the knowledge embedded in these legacy systems is more valuable than the code itself.
+                </p>
+
+                <p>
+                    <a href="https://spec-ops.ai/">SpecOps</a> is a methodology I've been developing that flips the usual approach to legacy system modernization. Instead of using AI tools to convert, say, COBOL code into Java code, SpecOps uses AI to extract institutional knowledge from legacy code into plain-language specifications that domain experts can actually verify. The specification becomes the source of truth and guide <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">spec-driven development</a> of modern systems — update the spec first, then use the spec to update the code.
+                </p>
+
+                <p>
+                    One way to think about it is like GitOps for system behavior — version-controlled specifications govern all implementations, creating an audit trail and enabling proper oversight of changes.
+                </p>
+
+                <h2>Testing the approach with IRS Direct File</h2>
+
+                <p>
+                    To try and flesh this approach out more fully, I built a demonstration using the <a href="https://github.com/IRS-Public/direct-file">IRS Direct File project</a> — the free tax filing system that launched in 2024, and which is available on GitHub. It's not "legacy" per se, but it is an ideal test case for several reasons — it has complex business logic interpreting the Internal Revenue Code, a multi-language codebase (TypeScript, Scala, Java), and implements a set of rules that tax policy experts can verify.
+                </p>
+
+                <p>
+                    To support this demo, I created a reusable set of AI instructions (i.e., "skills" files) for analyzing tax system code:
+                </p>
+
+                <ul>
+                    <li><strong>Tax Logic Comprehension</strong> — the foundation skill for understanding IRC references and tax calculations</li>
+                    <li><strong>Standard Deduction Calculation</strong> — extracting standard vs. itemized deduction logic</li>
+                    <li><strong>Dependent Qualification Rules</strong> — capturing the tests for qualifying children and relatives</li>
+                    <li><strong>Scala Fact Graph Analysis</strong> — understanding the declarative knowledge graph structures</li>
+                </ul>
+
+                <p>
+                    To run the demo, I pointed three different AI models (GPT-5, Gemini 2.5 Pro, and Claude Sonnet 4.5) at actual code samples from Direct File GitHub repo and asked them to generate specifications.
+                </p>
+
+                <h2>Results</h2>
+
+                <p>
+                    Here are the results of my first attempt at running this demo.
+                </p>
+
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Specification</th>
+                            <th>Model</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standard Deduction</td>
+                            <td>GPT-5</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>Filing Status</td>
+                            <td>Gemini 2.5 Pro</td>
+                            <td>A-</td>
+                        </tr>
+                        <tr>
+                            <td>Dependent Qualification</td>
+                            <td>Claude Sonnet 4.5</td>
+                            <td>B+</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    All three models successfully extracted business logic into plain language suitable for domain expert review. A tax policy analyst could <a href="https://github.com/mheadd/spec-ops-demo/tree/main/specifications">look at the generated specs</a> and say "yes, that's correct" or "no, you're missing the residency requirement" — this is something they could probably not do (certainly not as easily) staring at raw software code.
+                </p>
+
+                <p>
+                    Notably, <a href="https://github.com/mheadd/spec-ops-demo/issues/1">these results came from single prompts without iteration</a>. The skills I put together worked across different AI vendors, demonstrating the portability of the SpecOps approach.
+                </p>
+
+                <h2>Why this is important for government agencies</h2>
+
+                <p>
+                    An important point that I want to emphasize about the SpecOps approach is that it can be used if there are immediate plans for a legacy system modernization, or if one is still several years out. SpecOps is designed to help aggregate and document knowledge about important government systems — there's never a bad time to do that work.
+                </p>
+
+                <p>
+                    Agencies can begin extracting specifications from legacy systems today, while institutional knowledge still exists and <a href="https://www.opm.gov/retirement-center/retirement-statistics/">subject matter experts are still available</a>. When modernization eventually happens — whether in two years or ten — agencies will have:
+                </p>
+
+                <ul>
+                    <li>Verified documentation for how systems actually behave</li>
+                    <li>Durable, version-controlled specifications that outlast any particular technology stack</li>
+                    <li>A foundation that makes future modernization faster, less risky, and less expensive</li>
+                </ul>
+
+                <p>
+                    The alternative is waiting until an agency is forced to modernize, scrambling to reverse-engineer systems after the people who understood them have potentially retired.
+                </p>
+
+                <h2>Areas for further exploration</h2>
+
+                <p>
+                    This demo also opens several questions worth investigating further:
+                </p>
+
+                <ul>
+                    <li><strong>Verification at scale:</strong> Can policy experts efficiently review AI-generated specs? Initial feedback suggests yes, but more testing is definitely needed.</li>
+                    <li><strong>Failure modes:</strong> The relatively low grade for Dependent Qualification indicates some room for improvement — what can be improved to generate a more highly rated system spec? A different model? A refined skill file? A better prompt (or prompts)?</li>
+                    <li><strong>Skill refinement:</strong> The demo seemed to work pretty well on the first attempt. How much different can the resulting spec files be with iterative prompting?</li>
+                </ul>
+
+                <p>
+                    The demo repository for this effort is <a href="https://github.com/mheadd/spec-ops-demo">public and designed for replication</a>. I'd welcome others testing this approach with different AI models, different code samples, or different domains entirely. I hope others become as excited about the potential for this approach as I am.
+                </p>
+
+                <div class="get-involved">
+                    <strong>Get involved</strong>
+                    <ul>
+                        <li>SpecOps Methodology: <a href="https://spec-ops.ai">https://spec-ops.ai</a></li>
+                        <li>Demo Repository: <a href="https://github.com/mheadd/spec-ops-demo">https://github.com/mheadd/spec-ops-demo</a></li>
+                        <li>SpecOps Discussion: <a href="https://github.com/mheadd/spec-ops/discussions">https://github.com/mheadd/spec-ops/discussions</a></li>
+                    </ul>
+                </div>
+
+                <p>
+                    If you work in government technology, tax policy, or legacy modernization, I'd especially value your perspective on whether the generated specifications seem genuinely reviewable by domain experts. That's the core claim that makes SpecOps viable.
+                </p>
+
+                <p>
+                    The code for all government systems will eventually be replaced. The important question for those of us that work on and with those systems is whether the knowledge of how they are supposed to work survives that transition.
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
