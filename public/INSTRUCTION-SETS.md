@@ -3,11 +3,13 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Evidence Base](#evidence-base)
 - [The Evolving Nature of Instruction Sets](#the-evolving-nature-of-instruction-sets)
   - [Instruction Sets Are a Work in Progress](#instruction-sets-are-a-work-in-progress)
   - [Parallel Development](#parallel-development)
 - [Categories of Instruction Sets](#categories-of-instruction-sets)
 - [Instruction Set Maturity Levels](#instruction-set-maturity-levels)
+- [Instruction Set Design Principles](#instruction-set-design-principles)
 - [Opportunities for Collaboration](#opportunities-for-collaboration)
   - [Who Can Contribute Instruction Sets?](#who-can-contribute-instruction-sets)
   - [Models for Collaboration](#models-for-collaboration)
@@ -33,6 +35,20 @@ AI agent instruction sets—often called "skills" or "custom instructions"—are
 Unlike actual software code, which is tightly coupled to specific systems and contexts, instruction sets encode knowledge and patterns that can be applied across different organizations and projects. A well-crafted instruction set for understanding COBOL code works whether you're modernizing a benefits system in California or a tax system in New York.
 
 This creates enormous opportunity for collaboration and knowledge sharing across government agencies, between states, and even internationally.
+
+---
+
+## Evidence Base
+
+The case for human-curated instruction sets is supported by early empirical research. A 2026 benchmarking study (Li et al., "SkillsBench: Benchmarking the Effect of Skills on LLM Agent Code Generation," arXiv:2602.12670) tested curated Skills against no-Skills baselines across 86 tasks and thousands of agent trajectories. The findings align with several core SpecOps assumptions:
+
+- **Human-curated instruction sets meaningfully improve agent performance.** Curated Skills raised average pass rates substantially, with the largest gains in specialized domains where procedural knowledge is underrepresented in model training data.
+- **Not all instruction sets help equally.** Effects varied widely by domain, and a meaningful share of tasks showed negative deltas — instruction sets that actively hurt performance. This underscores the need for testing and iteration, not blind adoption.
+- **Focused instruction sets outperform comprehensive ones.** Sets with 2–3 targeted modules consistently outperformed broad documentation packages. More content is not better content.
+- **Self-generated Skills provide no benefit on average.** When agents were prompted to generate their own procedural knowledge, the resulting instructions offered negligible or negative improvement. Models cannot reliably author the procedural knowledge they benefit from consuming. This is not a temporary limitation to wait out — it is the structural argument for why human-authored instruction sets are worth the investment.
+- **Smaller models with good instruction sets can match larger models without them.** This has direct implications for cost and accessibility in government settings.
+
+This is early evidence in a fast-moving research area, not settled science. But the direction is clear: curated, human-authored procedural knowledge makes AI agents materially more capable — and doing it well requires deliberate effort, not automation.
 
 ---
 
@@ -141,16 +157,54 @@ Not all instruction sets need to be fully mature to be useful. We can think of t
 
 **Example**: "COBOL PERFORM statements with THRU clauses execute a range of paragraphs. Document these as compound operations in the specification..."
 
-### Level 3: Mature Instructions (Battle-Tested and Comprehensive)
-- Comprehensive pattern library
-- Extensive examples and test cases
+### Level 3: Mature Instructions (Refined and Focused)
+- Distilled pattern library targeting the highest-value patterns
+- Carefully selected examples and test cases — enough to be clear, not so many as to overwhelm
 - Integration with multiple tools and workflows
 - Community validation and contributions
 - Version history and improvements documented
+- Deliberately scoped to 2–3 focused modules rather than exhaustive documentation
 
-**Example**: Complete COBOL comprehension skill with hundreds of patterns, tested across dozens of systems, with contributions from multiple organizations.
+The goal at Level 3 is not volume but precision — focused guidance that covers the patterns that matter without adding overhead that obscures them. Comprehensive documentation can actually degrade agent performance compared to concise, well-structured instruction sets. Resist the urge to keep adding; instead, edit ruthlessly.
 
-**Start with Level 1, evolve to Level 3 through practice and community contribution.**
+**Example**: A COBOL business logic extraction skill distilled to its most effective patterns — tested across dozens of systems, trimmed to the guidance that actually moves the needle, with contributions from multiple organizations.
+
+**Start with Level 1, evolve to Level 3 through practice and community contribution. But remember: the path from Level 2 to Level 3 is about removing what doesn't help as much as adding what does.**
+
+---
+
+## Instruction Set Design Principles
+
+Not all instruction sets are created equal. How you structure and scope them matters as much as what they contain. The following principles should guide instruction set development:
+
+### Focus Beats Breadth
+
+Instruction sets with 2–3 focused modules consistently outperform broad, comprehensive documentation packages. When an instruction set tries to cover an entire domain, it introduces noise that can actually degrade agent performance — sometimes to worse than having no instruction set at all.
+
+**Do**: Create a focused instruction set for COBOL copybook analysis with clear patterns and examples.
+**Don't**: Create a single instruction set that covers all of COBOL comprehension, copybook analysis, JCL processing, and batch job documentation.
+
+### Working Examples Over Exhaustive Explanation
+
+Concrete, well-chosen examples are more effective than lengthy explanations of every possible scenario. A few realistic input/output pairs teach an agent more than pages of abstract guidance.
+
+### Target Procedural Gaps, Not General Knowledge
+
+Instruction sets should focus on specialized procedural knowledge that the model is unlikely to have — not general programming concepts or widely documented patterns. An agent already knows what a FOR loop does; it may not know how a state's categorical eligibility rules interact with federal SNAP guidelines.
+
+The domains where instruction sets provide the most dramatic improvement are exactly those where procedural knowledge is most specialized and least represented in training data.
+
+### Match Scope to Task Class
+
+Instruction sets should be scoped to a specific class of tasks, not an entire domain. A skill for "extracting business rules from COBOL conditional logic" is more effective than a skill for "understanding COBOL." The narrower the task alignment, the better the performance.
+
+### Test and Measure — Some Instructions Hurt
+
+A meaningful share of instruction sets will make agent output worse, not better. This isn't a failure of the approach — it's a reminder that instruction sets must be tested against actual tasks and refined or removed when they don't help. Treat instruction set development with the same rigor you'd apply to code: test, measure, iterate.
+
+### Human Authorship Is Not Optional
+
+AI agents prompted to generate their own procedural knowledge produce instructions that offer negligible or negative benefit on average. Effective instruction sets require human expertise — domain knowledge, editorial judgment, and iterative refinement based on observed agent performance. This is a feature of the approach, not a limitation: it's precisely why the investment in human curation pays off.
 
 ---
 
@@ -234,6 +288,8 @@ Not all instruction sets need to be fully mature to be useful. We can think of t
 - No sensitive data
 - Just patterns and knowledge
 - Easy to customize for local context
+
+**High-Impact Domains**: Government legacy domains are precisely where instruction sets provide the greatest benefit. Benefits administration, tax processing, licensing, unemployment insurance — these areas involve specialized procedural knowledge that is underrepresented in model training data. The more specialized and domain-specific the knowledge, the larger the performance improvement when it's captured in a well-crafted instruction set. Government agencies working in these domains stand to gain the most from investing in curated instruction sets.
 
 ### What Can Be Shared
 
@@ -692,6 +748,7 @@ Watch for:
 - Ask other agencies what they have
 - Look for relevant open source projects
 - Contact vendors or consultants
+- **Search public repositories**: Tens of thousands of agent Skills are now publicly available in repositories tagged with agent-skills conventions (e.g., on GitHub). Before building instruction sets from scratch, search for existing work that can be adapted. The community model this document envisions is already emerging in practice — leverage it.
 
 **Prioritize Development**:
 - What do you need immediately?
