@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A new benchmark study provides empirical support for the value of human-curated instruction sets in AI agent performance, and what it means for SpecOps.">
+    <title>What the Research Is Starting to Tell Us About Agent Skills | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What the Research Is Starting to Tell Us About Agent Skills">
+    <meta property="og:description" content="A new benchmark study provides empirical support for the value of human-curated instruction sets in AI agent performance, and what it means for SpecOps.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-02-24">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What the Research Is Starting to Tell Us About Agent Skills">
+    <meta name="twitter:description" content="A new benchmark study provides empirical support for the value of human-curated instruction sets in AI agent performance, and what it means for SpecOps.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .book-callout {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-callout p {
+            margin: 0;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">What the Research Is Starting to Tell Us About Agent Skills</h1>
+            <time datetime="2026-02-24">February 24, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    A core tenet of the SpecOps methodology is that human experts are critical in the legacy modernization process. Domain specialists who understand the business rules embedded in decades-old systems, policy experts who can verify that a specification actually captures what the code does, and practitioners who know where the bodies are buried in a 40-year-old COBOL codebase — these people are not incidental to SpecOps. They are the point.
+                </p>
+
+                <p>
+                    A recently published benchmark study adds a new dimension to that argument. It's not the same claim, but it's closely related: human experts are also the ones who have to author the procedural knowledge that makes AI agents effective in the first place. And the data on what happens when you try to skip that step is pretty clear.
+                </p>
+
+                <h2>The SkillsBench Findings</h2>
+
+                <p>
+                    A research team published a paper in February 2026 called <a href="https://arxiv.org/abs/2602.12670">SkillsBench</a>, the first systematic benchmark designed to measure how much agent Skills actually improve performance. They tested 84 tasks across 11 domains using seven different AI model and agent configurations, running over 7,300 trajectories. Each task was evaluated three ways: with no Skills, with curated human-authored Skills, and with Skills the agent generated for itself.
+                </p>
+
+                <p>
+                    The headline finding: curated Skills improved average pass rates by 16.2 percentage points. That's a meaningful lift across a diverse set of tasks and models. But the finding that I keep coming back to is the one about self-generated Skills.
+                </p>
+
+                <p>
+                    When agents were prompted to write their own procedural knowledge before attempting tasks, performance was essentially flat compared to having no Skills at all — negative 1.3 percentage points on average. In several configurations it was meaningfully worse. Only one model showed any notable improvement from self-generated Skills, and it was modest.
+                </p>
+
+                <p>
+                    The researchers identified two failure modes. First, models identify that domain-specific knowledge is needed but generate vague, imprecise procedures — they gesture at the right concepts without providing actionable guidance. Second, for tasks requiring highly specialized knowledge, models often fail to recognize they need specialized Skills at all and attempt solutions using general-purpose approaches. They don't know what they don't know.
+                </p>
+
+                <p>
+                    This is the structural argument for human-curated instruction sets, now with empirical support.
+                </p>
+
+                <h2>Why Domain Expertise Can't Be Reconstructed on Demand</h2>
+
+                <p>
+                    The domain-level breakdown in the paper is worth paying attention to. Healthcare tasks improved by 51.9 percentage points with curated Skills. Manufacturing improved by 41.9 points. Software engineering — a domain heavily represented in model training data — improved by only 4.5 points.
+                </p>
+
+                <p>
+                    The pattern is clear: the more specialized and underrepresented a domain is in model training data, the more curated Skills matter. Models already know a lot about software engineering. They know comparatively little about clinical data harmonization workflows, manufacturing job shop scheduling, or USGS flood frequency analysis methodology using Log-Pearson Type III distributions.
+                </p>
+
+                <p>
+                    Government legacy systems fit the high-benefit profile well. Benefits eligibility rules, unemployment insurance claim processing, tax calculation logic, professional licensing workflows — these are specialized domains with procedural knowledge that accumulated over decades in agencies and in the heads of people who worked there. That knowledge is not sitting in any training dataset waiting to be reconstructed on demand.
+                </p>
+
+                <p>
+                    A COBOL programmer who has spent years maintaining a state unemployment system knows which patterns trip up anyone new to the codebase, which business rules are buried in places you wouldn't expect, which edge cases have caused problems before. Instruction sets that capture that knowledge are valuable precisely because the AI cannot reproduce it from scratch. The benchmark now gives us a quantitative sense of how valuable.
+                </p>
+
+                <h2>Less Is More</h2>
+
+                <p>
+                    One finding in the paper has direct implications for how to build instruction sets: more content isn't better. Tasks with 2-3 Skills showed the largest improvement. Tasks with 4 or more Skills showed much smaller gains — and comprehensive Skills documentation actually hurt performance relative to having no Skills at all.
+                </p>
+
+                <p>
+                    The explanation the researchers offer is that excessive Skills content creates cognitive overhead. Agents struggle to extract relevant information from lengthy documentation, and overly elaborate Skills consume context budget without providing actionable guidance.
+                </p>
+
+                <p>
+                    This argues against the instinct to document everything you know. The goal isn't to write the most comprehensive instruction set possible — it's to distill what matters into focused, actionable guidance. Concise, stepwise procedures with at least one working example consistently outperformed exhaustive documentation.
+                </p>
+
+                <p>
+                    I've updated the <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/INSTRUCTION-SETS.md">SpecOps instruction sets guide on GitHub</a> to reflect this. The maturity model in that document previously could have been read as suggesting that more comprehensive instruction sets are better instruction sets. That framing is now clarified: Level 3 maturity means refined and focused, not exhaustive.
+                </p>
+
+                <h2>The Community Repository Is Already Happening</h2>
+
+                <p>
+                    Something else in the paper caught my attention. The researchers analyzed the existing public Skills ecosystem and found tens of thousands of Skills already available in public repositories tagged with agent-skills conventions, with growth surging sharply in early 2026. The community repository model that SpecOps envisions for government instruction sets isn't speculative — it's a pattern that has already taken hold at scale in the broader developer community.
+                </p>
+
+                <p>
+                    The government-specific version of this — a shared repository of instruction sets for COBOL comprehension, mainframe environments, benefits domain patterns, tax calculation logic, and the rest of the legacy system catalog — is still largely unbuilt. But the template exists and it works. Agencies starting SpecOps projects today should look for existing instruction sets in public repositories before building from scratch. Someone else may have already done the hard work of figuring out how to get AI agents to reason clearly about the platform you're working with.
+                </p>
+
+                <h2>A Note on the Research Itself</h2>
+
+                <p>
+                    We need to be appropriately careful about how much weight to put on any single study, including this one. This is early empirical work in a fast-moving area. Model capabilities are improving. The Skills ecosystem is growing and the quality distribution of available Skills will shift. Future research may refine these findings, add nuance, or identify conditions where the pattern looks different.
+                </p>
+
+                <p>
+                    What feels durable is the structural argument: human domain expertise encodes things that models cannot reconstruct on demand, and instruction sets are how that expertise gets made available to AI agents at inference time. The SkillsBench findings support that argument. They don't settle it permanently, but they give it empirical grounding it previously lacked.
+                </p>
+
+                <p>
+                    For agencies considering whether to invest in instruction set development as part of a SpecOps modernization effort, that's a meaningful data point. The benefit is real, the domains most relevant to government show the largest gains, and the knowledge being captured genuinely cannot be replaced by asking the AI to figure it out for itself.
+                </p>
+
+                <div class="book-callout">
+                    <p>
+                        The book, <em>The SpecOps Method: A New Approach to Modernizing Legacy Technology Systems</em>, is <a href="https://www.amazon.com/dp/B0GFGTK6TG">now available on Amazon</a>.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
