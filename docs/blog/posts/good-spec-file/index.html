@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What makes a good specification file for legacy government system modernization, and how to write specs that serve multiple audiences over time.">
+    <title>What Makes a Good Spec File? | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Makes a Good Spec File?">
+    <meta property="og:description" content="What makes a good specification file for legacy government system modernization, and how to write specs that serve multiple audiences over time.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2025-12-12">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Makes a Good Spec File?">
+    <meta name="twitter:description" content="What makes a good specification file for legacy government system modernization, and how to write specs that serve multiple audiences over time.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .post-content blockquote p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .post-content blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .book-callout {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-callout p {
+            margin: 0;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">What Makes a Good Spec File?</h1>
+            <time datetime="2025-12-12">December 12, 2025</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    Most legacy government systems exist in a state of profound documentation poverty. The knowledge lives in the heads of retiring employees, in COBOL comments from 1987, in binders that may or may not reflect current behavior. Against this baseline, the question of what makes a "good" spec file takes on different dimensions than it might in greenfield development.
+                </p>
+
+                <h2>Common Elements</h2>
+
+                <p>
+                    Any spec worth writing answers the fundamental question: what are we building and why? Beyond that, good specs share a few specific characteristics:
+                </p>
+
+                <p>
+                    <strong>Clear success criteria.</strong> Not just features, but how you'll know the thing works. This matters especially when AI agents are generating implementations&mdash;they need something concrete to validate against.
+                </p>
+
+                <p>
+                    <strong>Constraints and boundaries.</strong> What's out of scope. What technologies or patterns to use or avoid. Performance requirements. AI tools are prone to scope creep and assumption-making without explicit boundaries.
+                </p>
+
+                <p>
+                    <strong>Examples of expected behavior.</strong> Concrete inputs and outputs, edge cases, error states. These serve as both specification and implicit test cases.
+                </p>
+
+                <p>
+                    <strong>Context about the broader system.</strong> How this piece fits into what exists. AI assistants lack awareness of surrounding code and architectural decisions unless you tell them.
+                </p>
+
+                <h2>The SpecOps Context</h2>
+
+                <p>
+                    When modernizing legacy government systems, specs serve a different purpose than typical development documentation. They're not just implementation guides&mdash;they are artifacts that preserve institutional knowledge. This changes what "good" looks like.
+                </p>
+
+                <p>
+                    A SpecOps specification document must work for multiple audiences simultaneously: domain experts who verify that the spec captures policy intent, software developers and AI coding agents who need precision to generate correct implementations, and future humans who need to understand why the system behaves a certain way years from now&mdash;possibly after everyone currently involved has moved on.
+                </p>
+
+                <p>
+                    That last audience is the one most spec formats neglect entirely.
+                </p>
+
+                <h2>Three States, Not One</h2>
+
+                <p>
+                    Legacy system specs can't just describe "what the system does." They need to distinguish between:
+                </p>
+
+                <ul>
+                    <li><strong>Current system behavior</strong>&mdash;what the legacy code actually does today, bugs and all</li>
+                    <li><strong>Current policy requirements</strong>&mdash;what the system should do according to governing statutes and regulations</li>
+                    <li><strong>Technical constraints</strong>&mdash;what the system cannot do regardless of policy, due to missing integrations or platform limitations</li>
+                </ul>
+
+                <p>
+                    These three things can be in alignment or tension at any moment. And that alignment can shift over time without the code changing&mdash;a policy update tomorrow can transform compliant behavior into a violation.
+                </p>
+
+                <h2>Known Deviation Patterns</h2>
+
+                <p>
+                    Consider the example of a benefits system that should verify income against a state tax agency's records, but the legacy system only captures self-reported income because the integration with the tax agency was never built. A good spec would make this explicit:
+                </p>
+
+                <blockquote>
+                    <p><strong>Policy requirement:</strong> Per [directive], applicant income must be verified against tax agency records prior to benefit approval.</p>
+                    <p><strong>Current implementation:</strong> Self-reported income only. Applicant provides income information on Form X.</p>
+                    <p><strong>Deviation reason:</strong> No interface to tax agency income verification service exists. Integration requested in 2019, not funded.</p>
+                    <p><strong>Modernization note:</strong> Modern implementation should include tax agency income verification integration.</p>
+                </blockquote>
+
+                <p>
+                    This surfaces the gap, documents why it exists, and gives the modernization effort clear direction&mdash;without pretending the legacy system does something it doesn't.
+                </p>
+
+                <h2>Explicit Ambiguity as a Feature</h2>
+
+                <p>
+                    There's something that seems almost radical about a methodology that says <em>write down what you don't know</em>. Traditional documentation can project false confidence. It often describes how things should work and quietly omits the messy parts.
+                </p>
+
+                <p>
+                    A spec that explicitly marks areas of tension or uncertainty is more honest, more useful for risk assessment, and a better starting point for modernization. It's an invitation for future clarification rather than a false endpoint.
+                </p>
+
+                <p>
+                    A spec with unresolved tension is better than no reviewable documentation at all.
+                </p>
+
+                <h2>Policy Grounding</h2>
+
+                <p>
+                    Government system specs need explicit links to authorizing statutes, regulations, or directives. Not just "these items are excluded from income calculations" but "per 42 USC &sect; 1382a, the following items are excluded from income calculations."
+                </p>
+
+                <p>
+                    This is the <em>why</em> that survives personnel turnover. It's what allows future teams to evaluate whether behavior that was correct five years ago still aligns with current policy.
+                </p>
+
+                <h2>Decision Records</h2>
+
+                <p>
+                    When domain experts verify a spec, they make judgment calls&mdash;especially where legacy behavior diverges from current policy understanding. Those decisions need to be captured in the spec, not in a separate document that gets lost.
+                </p>
+
+                <p>
+                    The spec becomes the repository of institutional reasoning, not just institutional behavior.
+                </p>
+
+                <h2>Accessible or Precise?</h2>
+
+                <p>
+                    The SpecOps approach says that specs should be "readable by domain experts while detailed enough to guide implementation." This is genuinely hard.
+                </p>
+
+                <p>
+                    Options include stratified specs (plain-language summaries with expandable technical detail), executable specs (written as tests that are simultaneously human-readable and machine-verifiable), or annotated specs (a single verbose document where technical precision is explained inline).
+                </p>
+
+                <p>
+                    Given that the spec is meant to be the source of truth that outlasts implementations, keeping everything in one artifact&mdash;even at the cost of verbosity&mdash;reduces the risk of layers drifting apart over time.
+                </p>
+
+                <h2>The Road Ahead</h2>
+
+                <p>
+                    We're still in early days. Questions remain open:
+                </p>
+
+                <ul>
+                    <li>How granular should policy references be?</li>
+                    <li>What's the right way to represent known deviations?</li>
+                    <li>How should specs age&mdash;versioning, or is git history enough?</li>
+                    <li>What level of detail helps AI agents versus adding noise?</li>
+                </ul>
+
+                <p>
+                    These will get answered empirically as more agencies adopt the approach. The methodology will evolve. The important thing is to start&mdash;to surface questions that were previously invisible, to give future teams something to interrogate rather than nothing at all.
+                </p>
+
+                <p>
+                    Because the knowledge is what matters. Everything else is implementation details.
+                </p>
+
+                <div class="book-callout">
+                    <p>
+                        The book, <em>The SpecOps Method: A New Approach to Modernizing Legacy Technology Systems</em>, is <a href="https://www.amazon.com/dp/B0GFGTK6TG">now available on Amazon</a>.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
