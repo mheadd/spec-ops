@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How the Anthropic Code Modernization Plugin and SpecOps methodology complement each other to create a complete legacy modernization pipeline — from extraction through governance.">
+    <title>Two Great Things That Taste Great Together | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Two Great Things That Taste Great Together">
+    <meta property="og:description" content="How the Anthropic Code Modernization Plugin and SpecOps methodology complement each other to create a complete legacy modernization pipeline — from extraction through governance.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-05-06">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Two Great Things That Taste Great Together">
+    <meta name="twitter:description" content="How the Anthropic Code Modernization Plugin and SpecOps methodology complement each other to create a complete legacy modernization pipeline — from extraction through governance.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 1.75rem 0 0.75rem;
+            font-weight: 600;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content code {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.95em;
+        }
+
+        .post-content pre {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+        }
+
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        .post-content th, .post-content td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .post-content th {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .post-content td {
+            color: var(--text-light);
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .phase-card p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .phase-card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-callout {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-callout p {
+            margin: 0;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">Two Great Things That Taste Great Together 🥜 + 🍫</h1>
+            <time datetime="2026-05-06">May 6, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+
+                <p>
+                    Anthropic recently published a <a href="https://github.com/anthropics/claude-plugins-official/tree/morganl/code-modernization-plugin/plugins/code-modernization">Code Modernization Plugin</a> for Claude Code — a structured workflow and set of specialist agents for modernizing legacy codebases. It targets COBOL, legacy Java/C++, and monolith web apps, and enforces a specific sequence: <code>assess → map → extract-rules → reimagine → transform → harden</code>.
+                </p>
+
+                <p>
+                    The plugin's opening line could have been pulled straight from a SpecOps talk: "Legacy modernization fails most often not because the target technology is wrong, but because teams skip steps: they transform code before understanding it, reimagine architecture before extracting business rules, or ship without a harness that would catch behavior drift."
+                </p>
+
+                <p>
+                    We couldn't agree more. And it turns out the two approaches complement each other remarkably well — the plugin provides the tactical execution toolkit, and SpecOps provides the governance framework that makes the output durable.
+                </p>
+
+                <h2>What the Plugin Does</h2>
+
+                <p>
+                    The Code Modernization Plugin ships seven slash commands and five specialist agents:
+                </p>
+
+                <ul>
+                    <li><code>/modernize-brief</code> — Capture the modernization scope, constraints, and success criteria</li>
+                    <li><code>/modernize-assess</code> — Inventory the legacy codebase with quantitative metrics and effort estimation</li>
+                    <li><code>/modernize-map</code> — Map legacy structure onto a target architecture</li>
+                    <li><code>/modernize-extract-rules</code> — Extract business rules into structured, testable rule cards</li>
+                    <li><code>/modernize-reimagine</code> — Propose the target design</li>
+                    <li><code>/modernize-transform</code> — Execute the code transformation module by module</li>
+                    <li><code>/modernize-harden</code> — Post-transform security audit and test coverage review</li>
+                </ul>
+
+                <p>
+                    The agents — <code>legacy-analyst</code>, <code>business-rules-extractor</code>, <code>architecture-critic</code>, <code>security-auditor</code>, and <code>test-engineer</code> — are invoked from within those commands or directly. Each has a defined personality and adversarial stance. The architecture-critic's default question is "do we actually need this?" The test-engineer's core principle is "the legacy code is the oracle."
+                </p>
+
+                <h2>Where the Alignment Is Striking</h2>
+
+                <p>
+                    Several design decisions in the plugin mirror SpecOps principles almost exactly:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Principle</th>
+                            <th>Code Modernization Plugin</th>
+                            <th>SpecOps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Understand before transforming</td>
+                            <td>Enforced sequence: assess and extract before transform</td>
+                            <td>"Read specifications before code"</td>
+                        </tr>
+                        <tr>
+                            <td>Business rules as discrete artifacts</td>
+                            <td>Dedicated extraction command and agent</td>
+                            <td>Specifications capture what the system <em>should</em> do</td>
+                        </tr>
+                        <tr>
+                            <td>Given/When/Then format</td>
+                            <td>Rule Cards use Given/When/Then with concrete values</td>
+                            <td>Acceptance criteria in GIVEN/WHEN/THEN</td>
+                        </tr>
+                        <tr>
+                            <td>Confidence and ambiguity</td>
+                            <td>High/Medium/Low confidence with SME questions</td>
+                            <td>"Flag ambiguity for human review"</td>
+                        </tr>
+                        <tr>
+                            <td>Tests pin legacy behavior</td>
+                            <td>"We're proving equivalence first; fixing bugs is a separate decision"</td>
+                            <td>"Capture what the code <em>does</em>, not what you think it <em>should</em> do"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Where SpecOps Adds What the Plugin Doesn't</h2>
+
+                <p>
+                    The plugin is excellent at the <em>extraction and transformation work</em>. But it doesn't address what happens before or after that work. Three gaps stand out:
+                </p>
+
+                <h3>1. Specification as the enduring source of truth</h3>
+
+                <p>
+                    The plugin produces analysis artifacts — <code>analysis/rules.md</code>, <code>analysis/assessment.md</code> — that are valuable during modernization but aren't positioned as the ongoing governance layer. SpecOps treats the specification as permanent institutional knowledge: it outlives both the legacy and modern systems, governs future changes, and flows through a version-controlled change management process.
+                </p>
+
+                <h3>2. Human verification as a hard gate</h3>
+
+                <p>
+                    The plugin flags low-confidence rules for SME review, but the workflow is fluid — you can proceed from <code>/modernize-extract-rules</code> to <code>/modernize-transform</code> without an enforced stop. SpecOps inserts an explicit Phase 3 where domain experts (not engineers) verify specifications before any implementation begins. The rule is: "Domain experts verify specifications, not code."
+                </p>
+
+                <h3>3. Post-modernization governance</h3>
+
+                <p>
+                    Once the plugin's <code>/modernize-harden</code> pass is complete, the workflow is done. SpecOps continues: the <a href="https://github.com/spec-ops-method/spec-ops-action">SpecOps GitHub Action</a> creates trackable issues when specifications change, enforcing "propose spec changes before code changes" for the life of the new system.
+                </p>
+
+                <h2>The Integrated Pipeline</h2>
+
+                <p>
+                    The natural integration uses the plugin's commands for execution and SpecOps for governance:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Plugin Role</th>
+                            <th>SpecOps Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Discovery</td>
+                            <td><code>/modernize-brief</code>, <code>/modernize-assess</code></td>
+                            <td>Stakeholder engagement, scope confirmation</td>
+                        </tr>
+                        <tr>
+                            <td>2. Extraction</td>
+                            <td><code>/modernize-extract-rules</code></td>
+                            <td>Convert Rule Cards to governed specifications</td>
+                        </tr>
+                        <tr>
+                            <td>3. Verification</td>
+                            <td>—</td>
+                            <td><strong>Human gate:</strong> domain experts verify specs</td>
+                        </tr>
+                        <tr>
+                            <td>4. Architecture</td>
+                            <td><code>/modernize-map</code>, <code>/modernize-reimagine</code></td>
+                            <td>Traceability check against specs</td>
+                        </tr>
+                        <tr>
+                            <td>5. Transformation</td>
+                            <td><code>/modernize-transform</code></td>
+                            <td>Implement to spec, not to legacy behavior</td>
+                        </tr>
+                        <tr>
+                            <td>6. Hardening</td>
+                            <td><code>/modernize-harden</code></td>
+                            <td>Remediate per spec-change workflow</td>
+                        </tr>
+                        <tr>
+                            <td>7. Governance</td>
+                            <td>—</td>
+                            <td>Specs govern all future changes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    The critical handoff is between Phase 2 and Phase 3. The plugin's <code>business-rules-extractor</code> produces Rule Cards with confidence ratings and Given/When/Then specifications. Those cards get converted into SpecOps specification format — plain-language requirements with acceptance criteria, edge cases, and references to governing authority — and placed in the <code>specifications/</code> directory for domain expert review. Only after verification do they become the source of truth that drives implementation.
+                </p>
+
+                <h2>The AGENTS.md File as the Bridge</h2>
+
+                <p>
+                    The mechanism that ties the two systems together is the <a href="https://github.com/mheadd/spec-ops-agents-file"><code>AGENTS.md</code></a> file at the project root. This file provides standing instructions to any AI agent working in the repository — including the plugin's specialist agents. It encodes the SpecOps governance rules so that when the <code>legacy-analyst</code> or <code>business-rules-extractor</code> operates in the workspace, their output is shaped by specification-driven principles:
+                </p>
+
+                <ul>
+                    <li>Read specifications before code</li>
+                    <li>Never implement undocumented behavior</li>
+                    <li>Preserve institutional knowledge — extract implicit rules into specification language</li>
+                    <li>Flag ambiguity for human resolution rather than interpreting</li>
+                </ul>
+
+                <p>
+                    This means the plugin's agents don't just produce standalone analysis artifacts — they feed into the specification governance pipeline automatically.
+                </p>
+
+                <h2>Skills: The Domain Knowledge Layer</h2>
+
+                <p>
+                    The plugin's agents are generalists. They know how to structure an assessment or extract rules, but they may lack deep fluency in your specific legacy stack or business domain. This is where SpecOps <em>skills</em> come in — human-authored Markdown instruction sets that teach agents how to read specific technologies, apply domain patterns, and produce structured output.
+                </p>
+
+                <p>
+                    A COBOL comprehension skill teaches paragraph-level control flow and copybook resolution. A tax-logic skill maps IRC section references to calculation implementations. A contract-test skill is tuned to your project's test framework conventions. These fill the gap between a general-purpose plugin agent and the specialized expertise your modernization requires.
+                </p>
+
+                <p>
+                    This composability is the key architectural insight. Tools like Claude Code are explicitly built to leverage plugins, skills, and agent instruction sets as a composable ecosystem. The Code Modernization Plugin is one purpose-built capability. SpecOps' <code>AGENTS.md</code> provides governance. Community skills provide domain-specific knowledge. They assemble into a pipeline matched to the problem at hand — rather than forcing every modernization through a single monolithic tool.
+                </p>
+
+                <p>
+                    The <a href="https://github.com/spec-ops-method/spec-ops-skills">SpecOps Skills Directory</a> catalogs community-contributed skills spanning the full modernization pipeline — from initial planning and analysis through specification generation, verification, testing, and drift detection. The directory is growing, and the Code Modernization Plugin is now listed as a complementary resource.
+                </p>
+
+                <h2>Key Principles for the Combined Approach</h2>
+
+                <ol>
+                    <li><strong>The plugin does the work; SpecOps governs the outcome.</strong> Use the plugin's agents and commands for extraction and transformation. Use SpecOps for verification, traceability, and ongoing change management.</li>
+                    <li><strong>Specifications outlive both systems.</strong> The <code>analysis/</code> directory is a modernization artifact. The <code>specifications/</code> directory is permanent institutional knowledge.</li>
+                    <li><strong>Never skip verification.</strong> The plugin can extract rules at High confidence. Domain experts still confirm them. "The code is correct" is an assumption until a human says so.</li>
+                    <li><strong>Bugs are decisions, not accidents.</strong> When legacy behavior differs from policy, the specification captures the <em>correct</em> behavior (per domain expert), and the implementation follows the specification — not the bug.</li>
+                    <li><strong>Incremental, not big-bang.</strong> Both the plugin (module-by-module transform) and SpecOps (iterative specification development) support incremental modernization. Use the Strangler Fig pattern to replace components progressively.</li>
+                </ol>
+
+                <h2>What This Means</h2>
+
+                <p>
+                    The fact that Anthropic built a legacy modernization plugin that independently arrived at many of the same principles — understand before transforming, extract rules as discrete artifacts, use Given/When/Then, flag ambiguity, pin legacy behavior with tests — is validating. It suggests these aren't just SpecOps opinions; they're emerging consensus about how to do this work responsibly.
+                </p>
+
+                <p>
+                    The difference is scope and durability. The plugin is excellent at the tactical execution. SpecOps provides the governance that makes the output last — verified specifications that outlive both systems, domain expert sign-off, tracked changes, and institutional knowledge preserved for the next team that inherits this code twenty years from now.
+                </p>
+
+                <p>
+                    Together, they form a complete answer: discover, extract, verify, implement, validate, govern. Peanut butter and chocolate.
+                </p>
+
+                <div class="book-callout">
+                    <p>
+                        The book, <em>The SpecOps Method: A New Approach to Modernizing Legacy Technology Systems</em>, is <a href="https://www.amazon.com/dp/B0GFGTK6TG">now available on Amazon</a>.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
