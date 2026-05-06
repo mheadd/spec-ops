@@ -180,7 +180,7 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo-gradient">Two Great Things That Taste Great Together 🥜 + 🍫</h1>
+            <h1 class="logo-gradient">SpecOps + Anthropic's Code Modernization Plugin: An Integrated Workflow</h1>
             <time datetime="2026-05-06">May 6, 2026</time>
         </div>
     </header>
@@ -228,7 +228,7 @@
                     The agents — <code>legacy-analyst</code>, <code>business-rules-extractor</code>, <code>architecture-critic</code>, <code>security-auditor</code>, and <code>test-engineer</code> — are invoked from within those commands or directly. Each has a defined personality and adversarial stance. The architecture-critic's default question is "do we actually need this?" The test-engineer's core principle is "the legacy code is the oracle."
                 </p>
 
-                <h2>Where the Alignment Is Striking</h2>
+                <h2>Highly Aligned with the SpecOps Method</h2>
 
                 <p>
                     Several design decisions in the plugin mirror SpecOps principles almost exactly:
@@ -239,7 +239,7 @@
                         <tr>
                             <th>Principle</th>
                             <th>Code Modernization Plugin</th>
-                            <th>SpecOps</th>
+                            <th>SpecOps Method</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -271,10 +271,10 @@
                     </tbody>
                 </table>
 
-                <h2>Where SpecOps Adds What the Plugin Doesn't</h2>
+                <h2>Where SpecOps Adds To What the Plugin Does</h2>
 
                 <p>
-                    The plugin is excellent at the <em>extraction and transformation work</em>. But it doesn't address what happens before or after that work. Three gaps stand out:
+                    The plugin is excellent at the <em>extraction and transformation work</em>. SpecOps covers some other critical steps that happen before and after that work. Three things stand out:
                 </p>
 
                 <h3>1. Specification as the enduring source of truth</h3>
@@ -295,10 +295,10 @@
                     Once the plugin's <code>/modernize-harden</code> pass is complete, the workflow is done. SpecOps continues: the <a href="https://github.com/spec-ops-method/spec-ops-action">SpecOps GitHub Action</a> creates trackable issues when specifications change, enforcing "propose spec changes before code changes" for the life of the new system.
                 </p>
 
-                <h2>The Integrated Pipeline</h2>
+                <h2>An Integrated Workflow</h2>
 
                 <p>
-                    The natural integration uses the plugin's commands for execution and SpecOps for governance:
+                    The natural integration of the plugin and SpecOps would use the plugin's commands for execution and the SpecOps Methodfor governance:
                 </p>
 
                 <table>
@@ -355,7 +355,7 @@
                 <h2>The AGENTS.md File as the Bridge</h2>
 
                 <p>
-                    The mechanism that ties the two systems together is the <a href="https://github.com/mheadd/spec-ops-agents-file"><code>AGENTS.md</code></a> file at the project root. This file provides standing instructions to any AI agent working in the repository — including the plugin's specialist agents. It encodes the SpecOps governance rules so that when the <code>legacy-analyst</code> or <code>business-rules-extractor</code> operates in the workspace, their output is shaped by specification-driven principles:
+                    The mechanism that would tie the two systems together is the <a href="https://github.com/spec-ops-method/spec-ops-agents-file"><code>AGENTS.md</code></a> file placed at the project root. This file provides standing instructions to any AI agent working in the repository — including the plugin's specialist agents. It encodes the SpecOps governance rules so that when the <code>legacy-analyst</code> or <code>business-rules-extractor</code> operates in the workspace, their output is shaped by specification-driven principles:
                 </p>
 
                 <ul>
