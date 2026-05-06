@@ -355,7 +355,7 @@
                 <h2>The AGENTS.md File as the Bridge</h2>
 
                 <p>
-                    The mechanism that would tie the two systems together is the <a href="https://github.com/spec-ops-method/spec-ops-agents-file"><code>AGENTS.md</code></a> file placed at the project root. This file provides standing instructions to any AI agent working in the repository, including the plugin's specialist agents. It encodes the SpecOps governance rules so that when the <code>legacy-analyst</code> or <code>business-rules-extractor</code> operates in the workspace, their output is shaped by specification-driven principles:
+                    The mechanism that would tie the two systems together is the <a href="https://github.com/spec-ops-method/spec-ops-agents-file"><code>AGENTS.md</code></a> file placed at the project root.<sup><a href="#fn2" id="fnref2">2</a></sup> This file provides standing instructions to any AI agent working in the repository, including the plugin's specialist agents. It encodes the SpecOps governance rules so that when the <code>legacy-analyst</code> or <code>business-rules-extractor</code> operates in the workspace, their output is shaped by specification-driven principles:
                 </p>
 
                 <ul>
@@ -420,6 +420,9 @@
                 <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
                 <p id="fn1" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-light);">
                     <sup>1</sup> As models continue to mature, their training data will increasingly include legacy languages and conventions, and agents will become more fluent in these stacks out of the box. This makes it important to be strategic about what skills to introduce into the agent's context during modernization. Skills can augment what agents do during the process, but more information is not always better. Research suggests that excessive skills content can actually hurt performance by creating cognitive overhead. Be selective, and prioritize focused, actionable guidance over exhaustive documentation. See the <a href="https://arxiv.org/abs/2602.12670">SkillsBench study</a> for empirical findings on this effect. <a href="#fnref1">↩</a>
+                </p>
+                <p id="fn2" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-light);">
+                    <sup>2</sup> This file could also be named <code>CLAUDE.md</code> to match Claude Code conventions. Claude Code recognizes both <code>AGENTS.md</code> and <code>CLAUDE.md</code> as agent instruction files at the project root. <a href="#fnref2">↩</a>
                 </p>
             </article>
         </div>
