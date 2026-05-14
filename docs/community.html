@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the SpecOps community of practice — government technologists, domain experts, and civic technologists modernizing legacy systems together." />
+  <title>SpecOps Community</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+  <meta name="theme-color" content="#2563eb">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SpecOps Community" />
+  <meta property="og:description" content="Join the SpecOps community of practice — government technologists, domain experts, and civic technologists modernizing legacy systems together." />
+  <meta property="og:image" content="./og-image.png" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SpecOps Community" />
+  <meta name="twitter:description" content="Join the SpecOps community of practice — government technologists, domain experts, and civic technologists modernizing legacy systems together." />
+  <meta name="twitter:image" content="./og-image.png" />
+  <link rel="stylesheet" href="./styles.min.css">
+  <style>
+    header { padding: 3.5rem 0 3rem; }
+    header h1 { font-size: 2.25rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+    header p { font-size: 1.125rem; opacity: 0.95; margin: 0; }
+    .container { max-width: 1100px; padding: 0 1.25rem; }
+
+    .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+    .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+    .btn-link:hover { background: var(--primary); color: #fff; }
+
+    main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+    .community-intro {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08), var(--glow);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .community-intro h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin: 0 0 1rem;
+    }
+
+    .community-intro p {
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0.75rem 0;
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .community-card {
+      background: var(--glass-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .community-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin: 0 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .community-card p, .community-card li {
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .community-card ul {
+      margin: 0.5rem 0 0 1.25rem;
+      padding: 0;
+    }
+
+    .community-card li {
+      margin: 0.35rem 0;
+    }
+
+    .join-section {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08), var(--glow);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .join-section h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin: 0 0 1rem;
+    }
+
+    .join-section p {
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0.75rem 0;
+      font-size: 1.05rem;
+    }
+
+    .join-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-join {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-join-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-join-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-join-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-join-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    footer { padding: 1.5rem 0; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.75rem; }
+      header p { font-size: 1rem; }
+      .community-intro, .join-section { padding: 1.5rem; }
+      .community-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo-gradient">⚡ SpecOps Community</h1>
+      <p>A community of practice for specification-driven legacy modernization</p>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="container">
+      <a href="./index.html" class="btn-link">← Back to Home</a>
+      <a href="./blog/" class="btn-link">Blog</a>
+      <a href="./faq.html" class="btn-link">FAQ</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="community-intro">
+        <h2>What Is the SpecOps Community?</h2>
+        <p>
+          SpecOps is a community of practice for people working on legacy system modernization in government.
+          We share techniques, tools, and hard-won lessons about using AI and specification-driven approaches
+          to preserve institutional knowledge while building modern systems.
+        </p>
+        <p>
+          Whether you're staring down a COBOL mainframe, wrestling with undocumented business rules,
+          or trying to modernize a critical system without breaking it — you're in the right place.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="community-card">
+          <h3>👥 Who It's For</h3>
+          <ul>
+            <li><strong>Government technologists</strong> modernizing legacy systems</li>
+            <li><strong>Domain experts</strong> who understand the policy and business rules embedded in legacy code</li>
+            <li><strong>Policy people</strong> responsible for the rules these systems implement</li>
+            <li><strong>Civic technologists</strong> building tools and approaches for public-sector modernization</li>
+          </ul>
+        </div>
+
+        <div class="community-card">
+          <h3>🎁 What Members Get</h3>
+          <ul>
+            <li><strong>Slack workspace</strong> — Connect with peers, ask questions, and share what you're learning</li>
+            <li><strong>GitHub organization</strong> — Access shared tools, templates, and reference implementations</li>
+            <li><strong>Free book</strong> — Founding members receive a complimentary copy of the SpecOps book</li>
+          </ul>
+        </div>
+
+        <div class="community-card">
+          <h3>💬 What We Talk About</h3>
+          <ul>
+            <li>Strategies for understanding and documenting legacy systems</li>
+            <li>Using AI as a force multiplier for modernization</li>
+            <li>Writing specifications that domain experts can verify</li>
+            <li>Sharing instruction sets and patterns across agencies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="join-section">
+        <h2>Join the Community</h2>
+        <p>
+          Getting involved is simple — join our Slack workspace to start connecting with other practitioners.
+          Introduce yourself, share what you're working on, and start learning from the community.
+        </p>
+        <div class="join-buttons">
+          <a href="https://join.slack.com/t/specopscommunity/shared_invite/zt-3xyivqkmb-vLjnXL9CmNz4zt4ZpwmzSw" class="btn-join btn-join-primary">
+            Join Slack
+          </a>
+          <a href="https://github.com/spec-ops-method" class="btn-join btn-join-secondary">
+            GitHub Organization
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
