@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Two practitioners working independently have extended SpecOps in ways the original articulation didn't fully anticipate — and both point to a deeper understanding of spec drift.">
+    <title>How Practitioners Are Improving SpecOps | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How Practitioners Are Improving SpecOps">
+    <meta property="og:description" content="Two practitioners working independently have extended SpecOps in ways the original articulation didn't fully anticipate — and both point to a deeper understanding of spec drift.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-06-15">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Practitioners Are Improving SpecOps">
+    <meta name="twitter:description" content="Two practitioners working independently have extended SpecOps in ways the original articulation didn't fully anticipate — and both point to a deeper understanding of spec drift.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">How Practitioners Are Improving SpecOps</h1>
+            <time datetime="2026-06-15">June 15, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    When I first wrote a book about the SpecOps methodology, it represented my experience working to modernize legacy systems in government and my ideas for how we should do that work effectively with AI tools. SpecOps is a different way to think about legacy system modernization. It's built on two proven ideas borrowed from modern software practices. First, Spec-driven development, which says that you write a comprehensive description of how a system should behave before any code gets written. And second, GitOps, which says that the version-controlled representation of a system is the authoritative source of truth about how that system works, and changes flow to it first. Put those two powerful ideas together and you get SpecOps.
+                </p>
+                <p>
+                    That reversal is what makes SpecOps different. Traditional legacy modernization, whether done by human coders or with AI assistance, converts old code into new code and treats the new code as the source of truth the moment the project ends. Requirements documents and architecture diagrams get produced along the way, but they exist to support the conversion and stop being maintained once it's over. SpecOps decouples understanding <em>how a system works</em> from <em>how it happens to be built</em>. Policy experts and program staff can read and verify a plain-language specification of eligibility rules or benefit calculations in a way they never could verify a Java translation of COBOL. Verified specifications then guide the actual legacy modernization. When something needs to change, the specification changes first.
+                </p>
+                <p>
+                    This matters because it breaks a cycle that government has been burdened with forever. Even a successful conversion produces a new system that starts accumulating technical debt on day one and becomes the next decade's modernization crisis. A verified, maintained specification means a government agency never again gets stuck operating a critical system it depends on but no longer understands. The knowledge outlives the technology.
+                </p>
+                <p>
+                    I wrote the SpecOps book so that practitioners could use it, share it — and improve it. That's now happening, and the improvements are worth writing down and talking about. Two practitioners working independently have extended SpecOps in ways the original articulation didn't fully anticipate, and both extensions converge on the reality for modernizing legacy systems: a verified specification is essential, but it does not, by itself, guarantee the system stays aligned with it. Something has to actively watch for the gaps between the system and the spec.
+                </p>
+
+                <h2>Specifications Need a Layer Above the Rules</h2>
+                <p>
+                    The first set of extensions comes from a working engineering team that <a href="https://github.com/JarvusInnovations/specops">turned SpecOps into a tool they install into a codebase and run every day</a>. Several of their additions are practical scaffolding, but two reach into the core theory of SpecOps.
+                </p>
+                <p>
+                    The first is the separation of state from motion. A specification describes what should be true forever. It says nothing about the order in which work gets done, what's blocking what, or how anyone knows a piece is finished. The team at Jarvus Innovations added a second artifact they call a plan. Each plan is one bounded chunk of work in its own file, carrying its scope, the specifications it implements, its dependencies on other plans, and a checklist of concrete criteria that has to be satisfied before the work counts as done. Specifications are frozen by review; plans freeze when the work merges, and a frozen plan becomes a permanent record of what got built and what got deferred. This is the part of their approach with no real counterpart in my original description of the approach. SpecOps answered what must be true and who verifies it. <strong>The plan protocol answers what we work on next, in what order, and how we prove each piece is complete, and it does so in a form that survives the departure of whoever did the work.</strong> That directly serves the knowledge-preservation goal at the heart of SpecOps.
+                </p>
+                <p>
+                    Another improvement is the <a href="https://github.com/JarvusInnovations/specops/blob/main/skills/specops/SKILL.md#encode-the-philosophy-not-just-the-enumerated-rules">elevation of principles to first-class content inside a specification</a>. My original framing treated the specification as the place where system behavior lives: the rules, the calculations, the edge cases. The Jarvus team noticed that whoever implements a specification, a person or an AI agent, makes hundreds of small decisions, and enumerated rules can only cover the cases someone thought to write down. So they add the reasoning behind the rules. A principle is a decisive statement that picks a side of a real trade-off, written specifically to resolve the cases no rule anticipated, the same way the original author would have. The bar is that it has to rule something out. "The interface should be user-friendly" is useless. "Show stale data with a timestamp rather than block the screen on a refresh, because this tool runs in places with no signal" is enforceable. This is a valuable addition. SpecOps preserves what a system does. This extension argues you also have to preserve the judgment behind what it does, or the next person quietly rebuilds it as something else.
+                </p>
+
+                <h2>Generated Code Drifts from the Behavior It Was Supposed to Preserve</h2>
+                <p>
+                    The second set of extensions comes from Ryan Mahoney, a seasoned SpecOps practitioner who focused on a problem I probably underplayed: even after experts verify a specification, the code an AI generates from it can fail to match the legacy system it replaces. Code generation is itself a lossy step. It drops error handlers, weakens concurrency, loses edge cases, and does so silently, because nothing in a specification audit can see what the generator actually produced.
+                </p>
+                <p>
+                    <a href="https://github.com/ryan-mahoney/ryan-llm-skills/blob/main/skills/specops-implementation-drift/SKILL.md">The technique</a> here is a clever inversion of the SpecOps method itself. After a round of code generation, you run the same analysis you ran on the legacy system, the identical prompt and structure, against the freshly generated code, treating that new code as if it were itself legacy. Then you compare the two descriptions. The original SpecOps approach distrusts a code translation enough to analyze the legacy system into a readable specification. This extension applies the same distrust to the output, on the reasonable grounds that generated code deserves no more automatic trust than the COBOL it replaced.
+                </p>
+                <p>
+                    What makes this valuable is the taxonomy that comes with it: a structured account of how generated code loses fidelity. Behavior goes missing, with logging and error modes the usual casualties. Behavior gets weakened, where "exactly three retries with exponential backoff" degrades into "retries on failure." Behavior changes outright, in defaults or ordering or concurrency. Edge cases disappear. And modernized code sometimes gains behaviors the original never had, which catches scope creep as well as loss. The SpecOps book describes where AI hallucination happens, inventing rules and fabricating cases. This is the operational complement: a map of where AI code generation silently subtracts. For a benefits or tax system, silent subtraction is the more dangerous of the two.
+                </p>
+                <p>
+                    Ryan adds two further disciplines worth understanding. The first is epistemic humility about the audit itself. Both descriptions being compared are AI-generated, so a difference between them might be nothing more than two different ways of describing identical behavior. Every flagged divergence therefore gets checked against the actual generated code, which is treated as the only real ground truth, and false alarms are expected as a normal result rather than a failure. The second is treating completion as something you measure rather than declare. The back end of a migration becomes a loop: generate, audit for drift, correct, generate again, and keep going until only cosmetic differences remain. Severity sets the gate. A single critical divergence blocks completion no matter how few there are, and if the corrections stop shrinking from one round to the next, that plateau is itself a signal that the generator has a systematic blind spot worth investigating.
+                </p>
+
+                <h2>The Concept of "Spec Drift" Is More Than Just One Thing</h2>
+                <p>
+                    Put these enhancements side by side and a pattern emerges that neither states alone. In my original vision, the verified specification was the thing that prevented drift. What these practitioners have highlighted is that "drift" is not a single problem. There are at least three types, and each needs its own mechanism.
+                </p>
+                <p>
+                    There is drift within a specification, where it becomes ambiguous or contradicts itself. There is drift between a living specification and its code, where the two fall out of sync over time as a system evolves. And there is migration drift, where freshly generated code fails to preserve what the legacy system actually did. A verified specification, all on its own, doesn't really address any of these. It makes all three findable, which is something, but finding them takes deliberate auditing, not faith that the specification's existence keeps everything magically aligned.
+                </p>
+                <p>
+                    I'm more convinced now than I was when I published the book that the SpecOps approach is the right way to approach legacy modernization. But the ideas in the book are only the beginning. It's the people practicing this approach that will write the next chapter in the SpecOps story.
+                </p>
+                <p>
+                    If you're applying SpecOps to your own systems and finding gaps the original ideas didn't cover or address, I'd love to hear about it. That's how this approach gets better.
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
