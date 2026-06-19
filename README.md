@@ -1,6 +1,6 @@
 # SpecOps: Specification-Driven Legacy System Modernization
 
-> AI is going to change the game on legacy system modernization, but maybe not in the way you think.
+> AI is going to change the game on legacy system modernization, but maybe not in the way most people think.
 
 
 ## What is SpecOps?
