@@ -1,11 +1,11 @@
 # SpecOps: Specification-Driven Legacy System Modernization
 
-> AI is going to change the game on legacy system modernization, but maybe not in the way most people think.
+> AI is going to change the game on legacy system modernization, just not in the way most people think.
 
 
 ## What is SpecOps?
 
-SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge preservation and verified specifications rather than direct code translation.
+SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge `preservation and verified specifications rather than direct code translation.
 
 Traditional AI-assisted modernization tries to transpile legacy code directly into modern languages. SpecOps uses AI to compile institutional knowledge into comprehensive, human-verified specifications that become the authoritative source of truth for system behavior.
 
