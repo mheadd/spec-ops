@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="After a decade and $2.2 billion, most CCWIS modernization money still flows to legacy systems. The problem isn't funding or technology — it's the Implementation APD. Here's why it should become a verified software specification.">
+    <title>The APD Process Needs a Rewrite for the AI Era | SpecOps</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16.png">
+    <link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#2563eb">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icon-180.png">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The APD Process Needs a Rewrite for the AI Era">
+    <meta property="og:description" content="After a decade and $2.2 billion, most CCWIS modernization money still flows to legacy systems. The problem isn't funding or technology — it's the Implementation APD. Here's why it should become a verified software specification.">
+    <meta property="og:image" content="../../../og-image.png">
+    <meta property="article:published_time" content="2026-08-20">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The APD Process Needs a Rewrite for the AI Era">
+    <meta name="twitter:description" content="After a decade and $2.2 billion, most CCWIS modernization money still flows to legacy systems. The problem isn't funding or technology — it's the Implementation APD. Here's why it should become a verified software specification.">
+    <meta name="twitter:image" content="../../../og-image.png">
+    <link rel="stylesheet" href="../../../styles.min.css">
+    <style>
+        /* Blog post styles */
+        header { padding: 3.5rem 0 3rem; }
+        header h1 { font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; line-height: 1.3; }
+        header time { font-size: 1rem; opacity: 0.85; }
+
+        .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .toolbar .container { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: 0.4rem 0.8rem; border-radius: 0.5rem; }
+        .btn-link:hover { background: var(--primary); color: #fff; }
+
+        main { padding: 3rem 0 4rem; background: var(--bg-alt); }
+
+        .post-content {
+            background: var(--glass-bg);
+            border-radius: 1rem;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .post-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text);
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--primary);
+            margin: 1.5rem 0;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .post-content blockquote p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer { padding: 1.5rem 0; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .post-content { padding: 2rem; }
+            .post-content p, .post-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-gradient">The APD Process Needs a Rewrite for the AI Era</h1>
+            <time datetime="2026-08-20">August 20, 2026</time>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="container">
+            <a href="../../" class="btn-link">← All Posts</a>
+            <a href="../../../" class="btn-link">Home</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <article class="post-content">
+                <p>
+                    In June of this year, the Office of the Assistant Secretary for Planning and Evaluation (ASPE) within HHS low key published <a href="https://aspe.hhs.gov/sites/default/files/documents/bb20bd6bcf982dc431fe5d573b5c31d0/CCWIS%20Implementation%20Shows%20Minimal%20Progress%20-%206-23-2026.pdf">one of the more illuminating pieces</a> on the challenges of modernizing legacy systems that I have read in a while. I don't think it got all that much attention when it was released (I certainly missed it), but it is essential reading for anyone who cares about legacy modernization work in government.
+                </p>
+                <p>
+                    The brief examines the Comprehensive Child Welfare Information System (CCWIS) program, the federal framework that is intended to support the administrative systems that states use to track child safety, placements, and services. The primary finding highlighted in the brief won't shock anyone that has worked in the government technology space, but it's disheartening nonetheless:
+                </p>
+                <blockquote>
+                    <p>&ldquo;After a decade and over $2.2 billion in spending, CCWIS implementation remains slow and uneven, with most resources flowing to legacy systems rather than modernization. These outcomes stem from persistent gaps in planning, governance, and readiness, not a lack of available technology or funding.&rdquo;</p>
+                </blockquote>
+                <p>
+                    What's really valuable about this study is that it digs into <em>why</em> these problems exist. And the really interesting part is that the issue is not that there isn't sufficient money to support state modernization efforts (there is!) or that the technology doesn't exist to support modern systems either (it does!).
+                </p>
+                <p>
+                    Understanding the real challenges facing modernization of these critical state systems is essential if we're going to fix them so they work for the people that need them to work &mdash; at-risk kids.
+                </p>
+
+                <h2>Follow the Money</h2>
+                <p>
+                    When ASPE examined where the money spent on CCWIS implementation has actually gone, they found that 85% of it (about $1.9 billion) has gone to what are called &ldquo;transitional systems,&rdquo; rather than newly built ones. New CCWIS development accounts for just $331 million of total spending to date.
+                </p>
+                <p>
+                    This means the vast majority of the money that has gone out the door to support these critical state systems has gone toward maintaining outdated legacy systems, not building new ones that function more effectively.<sup><a href="#fn1" id="fnref1">1</a></sup>
+                </p>
+                <p>
+                    Transitional systems are the legacy environments states keep running while they build a modernized replacement. They're supposed to be temporary &mdash; a bridge to the future. But instead they've become the destination. On a per-year basis, the brief found that (among projects with any claims) the median transitional system costs roughly <em>twenty times</em> more than a new build. Federal dollars keep flowing to maintain old systems, with no firm deadline to ever turn them off.
+                </p>
+                <p>
+                    Why are these transitional systems lingering for so long? The brief acknowledges that legacy systems with &ldquo;complex or convoluted architecture and poor documentation&rdquo; are hard to transition away from. There is no comprehensive set of documentation that captures what the old system does, so replacing it is risky. The rational move is to maintain the status quo. One of the key factors examined in <a href="https://spec-ops.ai/book">my book on the SpecOps method,</a> and in the other blog posts on this site, is that extreme &ldquo;documentation poverty&rdquo; is what keeps governments chained to outdated systems. It is one of the reasons that legacy systems linger on long past when they should be retired or replaced.
+                </p>
+
+                <h2>Process Compliance Isn't Readiness</h2>
+                <p>
+                    The ASPE brief's core finding is that funding levels don't predict the success of legacy modernization efforts. Planning quality, governance structure, and organizational readiness do. States that start building a replacement system before they've done the foundational work required to support modernization end up with evolving requirements, rework, and timelines that stretch on for years and years.
+                </p>
+                <p>
+                    And there is a specific point in the current CCWIS funding and oversight process where this problem manifests most acutely: the <strong>Implementation Advance Planning Document (APD).</strong>
+                </p>
+                <p>
+                    For folks who are unfamiliar with how the federal government subsidizes the development of state-level administrative systems, states access federal money through the <a href="https://www.medicaid.gov/medicaid/data-systems/multi-program-advance-planning-documents">Advance Planning Document process</a>.<sup><a href="#fn2" id="fnref2">2</a></sup> The APD process is a series of formal submissions and approvals across planning, implementation, and operations steps that states undertake when applying for federal funding. The Implementation APD is a critical step in this process. Review and approval of this document unlocks the federal match for design, development, and implementation (DDI). It's the trigger for states to receive money to actually build the system.
+                </p>
+                <p>
+                    Despite its criticality, the ASPE brief found that there is &ldquo;no standardized expectation for the artifacts or level of maturity required before approval of DDI funding.&rdquo; So states can pass through this critical review gate with a document that essentially satisfies a compliance format (it looks right), without the business processes, data strategy, or governance structures behind it actually being sufficient. According to the brief:
+                </p>
+                <blockquote>
+                    <p>&ldquo;Many states begin development without these foundations in place. As a result, planning often <strong>continues into development</strong>, leading to evolving requirements, rework, and extended timelines.&rdquo; [emphasis added]</p>
+                </blockquote>
+                <p>
+                    States spend enormous amounts of time and money to develop their implementation APD documents, and federal agencies spend time and resources reviewing and approving them. The gate is in place, it just checks the wrong things. As it exists today, it measures the ability to comply with a bureaucratic requirement and submit an APD document that passes review. It does not measure a state's ability to successfully implement a new system. So if it's not doing that, what is it even good for?
+                </p>
+
+                <h2>Time for a New APD Process</h2>
+                <p>
+                    The APD process was built for a world in which generating code and building software systems was enormously expensive and slow. When a build potentially takes years and costs tens of millions of dollars it seems rational to front-load an exhaustive planning and approval process. When getting it wrong means starting over, it makes sense to invest heavily up front in the hope of getting it right, because the cost of getting it wrong will get your name in the paper. The heavy APD process can be seen as a rational response to expensive, high-risk development.
+                </p>
+                <p>
+                    That the underlying premise holding this logic together no longer holds.
+                </p>
+                <p>
+                    When building is cheap and fast, the expensive, irreversible part of the project is no longer the code. It's knowing what to build. The scarce resource shifts from construction to a clear, verified account of how the system is supposed to behave &mdash; and that is exactly the thing the current APD process never actually pins down.
+                </p>
+                <p>
+                    The entire premise of the <a href="https://spec-ops.ai/">SpecOps Methodology</a> is that AI has made it practical to compile institutional knowledge into a comprehensive, human-verified specification of how a system is supposed to work, and to do it in hours and days rather than months. And, just as importantly, to generate working code from that specification once it's verified. The specification, not the code, becomes the source of truth for system behavior. Domain experts, the program people who actually understand the policy, verify it in plain language. Then, and only then, does implementation begin.
+                </p>
+                <p>
+                    This changes the calculus on the two main problems the ASPE brief identifies.
+                </p>
+                <p>
+                    For states that are stuck with relying on a transitional system, seemingly indefinitely, a verified specification is exactly the missing artifact they need to move away from it. A primary reason states can't move away from transitional systems is that nobody has captured what those systems do. That's the specific condition a spec-driven approach is built to solve. A comprehensive system specification can be used to capture the behavior of the existing system and verify it. With this in hand, the risk of replacement drops dramatically.
+                </p>
+                <p>
+                    For assessing a state's readiness to implement a new system, a verified specification is a real definition of &ldquo;ready.&rdquo; Not an expensive document prepared by a team of outside consultants that &ldquo;looks&rdquo; right. Reorienting time and effort spent preparing an implementation APD document to preparing a verified system specification has real value. This reorientation would convert time spent preparing a bureaucratic APD document into developing an artifact that can support a real system implementation.
+                </p>
+
+                <h2>Here's My Idea</h2>
+                <p>
+                    Make the Implementation APD a verified software specification.
+                </p>
+                <p>
+                    That's it. That's the whole idea. But I think it could make a massive difference in driving the adoption of new, updated CCWIS systems to better serve at-risk kids in need.
+                </p>
+                <p>
+                    To be clear, I'm not proposing adding a new document to the stack the APD process already requires states to submit. The ASPE brief notes that states already experience the APD process as burdensome and complex &mdash; making that problem worse won't help. The software specification I propose should <em>absorb</em> the planning artifacts the process already nominally requires (which includes things like functional requirements, high-level design, business process rework, etc.) and turn them into an authoritative, version-controlled blueprint that governs the build of the new system. This spec comes first. It's verified by the people who understand the program &mdash; policy experts and SMEs. And every change to the system flows back through it, so the system stays aligned with it over time.
+                </p>
+                <p>
+                    Under this approach, the Implementation APD stops being a compliance checkpoint and becomes what its name implies: an actual plan that can be used for implementation.
+                </p>
+
+                <h2>But Wait, Not All States Are Stuck</h2>
+                <p>
+                    It's important to consider the few instances where states were able to move away from legacy systems and put new systems in place. The ASPE brief calls out two states as successes, and it's worth examining the approach each took. <a href="https://publicconsultinggroup.com/insight/moving-ccwis-from-planning-to-implementation-lessons-from-idaho-and-arizona/">Idaho and Arizona</a> both reached fully operational status not by exhaustively documenting their old systems, but by doing something closer to the opposite: they adopted configurable products and deliberately chose <em>not</em> to reproduce every legacy workflow. Idaho credited that decision as a key reason it succeeded. So if the states that have seen some success achieved that by essentially throwing legacy behavior away, why spend effort capturing it in a specification?
+                </p>
+                <p>
+                    That is precisely why a specification is critical: it enables a team to make those choices intentionally. As discussed in the brief, the root cause of failure is not a lack of configuration, but rather requirements that constantly shift during development because system expectations are never agreed upon upfront. Implementing a verified specification would drive early triage, helping distinguish core policy requirements that the system must enforce, habits disguised as requirements that can be eliminated, and features that should adapt to a configurable product. Idaho and Arizona successfully navigated these distinctions thanks to exceptionally disciplined leadership and seasoned program management (props to them). But the reality is that those things are not evenly distributed across states.
+                </p>
+                <p>
+                    That's the real promise of a spec-first APD. It's not a mandate to rebuild the past. It's how you give <em>every</em> state the ability to make the deliberate keep-drop-bend decision that today depends on getting lucky with leadership.
+                </p>
+
+                <h2>No Silver Bullets</h2>
+                <p>
+                    The brief identifies other constraints that even the best software specification can't fix: a lack of state procurement capacity, critical staff turnover, multi-year bundled contracts, legal and consent-decree complexity. A verified spec doesn't manufacture organizational readiness. In fact, it requires and channels it, which means states will need help producing a good one. That points to the brief's other big recommendation: ACF repositioning itself as an active partner in planning rather than a compliance overseer. A spec-first APD is exactly the kind of thing a federal partner could help states build.
+                </p>
+                <p>
+                    And I don't think this requires an act of Congress or a lengthy rulemaking process to achieve. The brief argues that modernizing CCWIS guidance is largely within ACF's existing authority. Redefining what a mature Implementation APD contains is a very achievable goal.
+                </p>
+
+                <h2>The Window is Open</h2>
+                <p>
+                    CCWIS is not a one off. The APD process governs a big chunk of federal-state technology funding, and the patterns it encourages are everywhere in government IT.
+                </p>
+                <p>
+                    But with the maturity of new AI models and tooling, we now have options that didn't exist when these rules were written. And it's time for the rules to catch up to that fact, starting with the primary APD document that decides whether a state is ready to build a new system.
+                </p>
+                <p>
+                    A fuller proposal outlining this idea is coming soon. But the bottom line is clear as day now. We need to stop treating the Implementation APD as a paperwork exercise, and start treating it as the blueprint for the systems that states want and that at-risk kids need.
+                </p>
+
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+                <p id="fn1" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-light);">
+                    <sup>1</sup> This is a similar finding to one identified in <a href="https://www.gao.gov/products/gao-25-107795">a recent GAO report</a> that looked at IT spending at large federal agencies. The GAO found that in FY 2025 about $83 billion (or 79 percent) of the $105 billion in planned total IT spending at 24 large agencies was allocated to operations and maintenance of existing systems, not modernization. <a href="#fnref1">↩</a>
+                </p>
+                <p id="fn2" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-light);">
+                    <sup>2</sup> The two main federal departments that use the Advance Planning Document (APD) process to approve and fund state information technology systems are the Department of Health and Human Services (HHS) and the Department of Agriculture (USDA). The brief discussed in this post focuses on the process used by HHS. <a href="#fnref2">↩</a>
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
